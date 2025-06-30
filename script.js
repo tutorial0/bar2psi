@@ -19,6 +19,7 @@ const formulaDisplay = document.getElementById("formula-display");
 function init() {
   updateUI();
   addEventListeners();
+  setupAnalyticsTracking();
 
   // Set initial focus
   inputValue.focus();
@@ -37,6 +38,22 @@ function addEventListeners() {
     if (e.key === "Enter") {
       e.preventDefault();
       inputValue.blur();
+      if (this.value) {
+        trackEvent("conversion_completed", {
+          completion_method: "enter_key",
+          conversion_type: isBarToPsi ? "bar_to_psi" : "psi_to_bar",
+        });
+      }
+    }
+  });
+
+  // Track when user finishes input (blur event)
+  inputValue.addEventListener("blur", function () {
+    if (this.value && outputValue.value) {
+      trackEvent("conversion_completed", {
+        completion_method: "input_blur",
+        conversion_type: isBarToPsi ? "bar_to_psi" : "psi_to_bar",
+      });
     }
   });
 
@@ -68,6 +85,13 @@ function handleInputChange(e) {
 
   // Display result with appropriate precision
   outputValue.value = formatResult(result);
+
+  // Analytics tracking - conversion used
+  trackEvent("calculator_used", {
+    conversion_type: isBarToPsi ? "bar_to_psi" : "psi_to_bar",
+    input_value: value,
+    output_value: result,
+  });
 }
 
 // Convert bar to PSI
@@ -126,6 +150,12 @@ function handleSwap() {
 
   // Focus on input
   inputValue.focus();
+
+  // Analytics tracking - swap button clicked
+  trackEvent("swap_conversion", {
+    new_conversion_type: isBarToPsi ? "bar_to_psi" : "psi_to_bar",
+    had_values: !!(inputVal && outputVal),
+  });
 
   // Reset button animation after a delay
   setTimeout(() => {
@@ -206,11 +236,19 @@ document.addEventListener("keydown", function (e) {
   // Ctrl/Cmd + S to swap
   if ((e.ctrlKey || e.metaKey) && e.key === "s") {
     e.preventDefault();
+    trackEvent("keyboard_shortcut_used", {
+      shortcut: "swap_conversion",
+      key_combination: (e.ctrlKey ? "ctrl" : "cmd") + "+s",
+    });
     handleSwap();
   }
 
   // Escape to clear
   if (e.key === "Escape") {
+    trackEvent("keyboard_shortcut_used", {
+      shortcut: "clear_fields",
+      key_combination: "escape",
+    });
     inputValue.value = "";
     outputValue.value = "";
     inputValue.focus();
@@ -229,10 +267,22 @@ outputValue.addEventListener("click", function () {
         setTimeout(() => {
           outputValue.style.backgroundColor = originalBg;
         }, 200);
+
+        // Analytics tracking - result copied
+        trackEvent("result_copied", {
+          conversion_type: isBarToPsi ? "bar_to_psi" : "psi_to_bar",
+          copied_value: outputValue.value,
+        });
       });
     } catch (err) {
       // Fallback for older browsers
       document.execCommand("copy");
+      // Analytics tracking - result copied (fallback)
+      trackEvent("result_copied", {
+        conversion_type: isBarToPsi ? "bar_to_psi" : "psi_to_bar",
+        copied_value: this.value,
+        copy_method: "fallback",
+      });
     }
   }
 });
@@ -279,6 +329,59 @@ console.log("- Ctrl/Cmd + S: Swap conversion direction");
 console.log("- Escape: Clear all fields");
 console.log("- Click output field to copy result");
 
+// Analytics tracking functions
+function trackEvent(eventName, parameters = {}) {
+  // Check if gtag is available
+  if (typeof gtag === "function") {
+    gtag("event", eventName, {
+      event_category: "pressure_converter",
+      event_label: eventName,
+      ...parameters,
+    });
+    console.log("Analytics event tracked:", eventName, parameters);
+  } else {
+    console.log("Analytics not available, would track:", eventName, parameters);
+  }
+}
+
+function setupAnalyticsTracking() {
+  // Track page scroll to bottom
+  let hasScrolledToBottom = false;
+
+  function checkScrollToBottom() {
+    if (hasScrolledToBottom) return;
+
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+
+    // Consider "bottom" as 90% of the page to account for different screen sizes
+    if (scrollTop + windowHeight >= documentHeight * 0.9) {
+      hasScrolledToBottom = true;
+      trackEvent("scrolled_to_bottom", {
+        page_height: documentHeight,
+        scroll_percentage: Math.round(
+          ((scrollTop + windowHeight) / documentHeight) * 100
+        ),
+      });
+    }
+  }
+
+  // Throttled scroll event listener
+  let scrollTimeout;
+  window.addEventListener("scroll", function () {
+    if (scrollTimeout) {
+      clearTimeout(scrollTimeout);
+    }
+    scrollTimeout = setTimeout(checkScrollToBottom, 100);
+  });
+
+  // Track page load
+  trackEvent("page_loaded", {
+    timestamp: new Date().toISOString(),
+  });
+}
+
 // Export functions for testing (if needed)
 if (typeof module !== "undefined" && module.exports) {
   module.exports = {
@@ -287,5 +390,6 @@ if (typeof module !== "undefined" && module.exports) {
     formatResult,
     BAR_TO_PSI,
     PSI_TO_BAR,
+    trackEvent,
   };
 }
