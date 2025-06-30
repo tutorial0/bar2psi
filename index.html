@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bar to PSI Converter - Free Online Pressure Unit Conversion Tool</title>
+    <meta name="description" content="Convert pressure between bar and PSI instantly with our free online converter. Includes conversion formulas, examples, and detailed explanations for engineers and mechanics.">
+    <meta name="keywords" content="bar to psi converter, pressure conversion, bar psi calculator, pressure units, engineering tools, fluid mechanics, pressure gauge conversion">
+    <meta name="author" content="Bar2PSI Converter">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:title" content="Bar to PSI Converter - Free Online Pressure Unit Conversion Tool">
+    <meta property="og:description" content="Convert pressure between bar and PSI instantly with our free online converter. Perfect for engineers, mechanics, and technical professionals.">
+    <meta property="og:image" content="">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="">
+    <meta property="twitter:title" content="Bar to PSI Converter - Free Online Pressure Unit Conversion Tool">
+    <meta property="twitter:description" content="Convert pressure between bar and PSI instantly with our free online converter. Perfect for engineers, mechanics, and technical professionals.">
+    <meta property="twitter:image" content="">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Bar to PSI Converter",
+        "url": "",
+        "description": "Free online pressure conversion tool for converting between bar and PSI units",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="canonical" href="">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <div class="logo">
+                    <h1>Bar2PSI</h1>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="hero">
+                <h1>Bar to PSI Converter</h1>
+                <p class="lead">Convert pressure between bar and PSI units instantly with our accurate online calculator</p>
+            </section>
+
+            <section class="converter-section">
+                <div class="converter-container">
+                    <div class="converter-card">
+                        <div class="input-group">
+                            <label for="input-value" id="input-label">Pressure in Bar</label>
+                            <input type="number" id="input-value" placeholder="Enter value" step="any">
+                            <span class="unit" id="input-unit">bar</span>
+                        </div>
+
+                        <div class="swap-container">
+                            <button id="swap-btn" class="swap-btn" title="Switch conversion direction">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M7 16V4m0 0L3 8m4-4l4 4m6 8v-8m0 8l-4-4m4 4l4-4"/>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="output-value" id="output-label">Pressure in PSI</label>
+                            <input type="number" id="output-value" placeholder="Result" readonly>
+                            <span class="unit" id="output-unit">psi</span>
+                        </div>
+                    </div>
+
+                    <div class="conversion-info">
+                        <div class="formula" id="formula-display">
+                            <strong>Formula:</strong> PSI = Bar × 14.50377
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <div class="content-grid">
+                    <article class="content-card">
+                        <h2>About Pressure Units: Bar and PSI</h2>
+                        <h3>What is Bar?</h3>
+                        <p>Bar is a metric unit of pressure that equals 100,000 pascals (10⁵ Pa). Although not part of the International System of Units (SI), bar is widely used in engineering, meteorology, and various industrial applications. It's particularly common in Europe and provides a convenient scale for measuring atmospheric and industrial pressures.</p>
+
+                        <h3>What is PSI?</h3>
+                        <p>PSI (Pounds per Square Inch) is an imperial pressure unit based on the pound-force. One PSI represents the pressure resulting from a force of one pound-force applied to an area of one square inch. PSI is extensively used in the United States for tire pressure, hydraulic systems, and various engineering applications.</p>
+                    </article>
+
+                    <article class="content-card">
+                        <h2>Bar to PSI Conversion Formula</h2>
+                        <p>The conversion between bar and PSI uses a fixed conversion factor:</p>
+                        <div class="formula-box">
+                            <div class="formula-item">
+                                <strong>Bar to PSI:</strong> PSI = Bar × 14.50377
+                            </div>
+                            <div class="formula-item">
+                                <strong>PSI to Bar:</strong> Bar = PSI ÷ 14.50377
+                            </div>
+                        </div>
+
+                        <h3>Conversion Examples</h3>
+                        <ul>
+                            <li><strong>1 bar</strong> = 14.50377 PSI</li>
+                            <li><strong>2 bar</strong> = 29.00754 PSI</li>
+                            <li><strong>5 bar</strong> = 72.51885 PSI</li>
+                            <li><strong>10 bar</strong> = 145.0377 PSI</li>
+                        </ul>
+                    </article>
+
+                    <article class="content-card">
+                        <h2>How to Use This Bar to PSI Converter</h2>
+                        <p>Our bar to PSI converter is designed for simplicity and accuracy. Whether you're an engineer, mechanic, or student, you can convert pressure units effortlessly with just a few clicks.</p>
+
+                        <h3>Step-by-Step Guide</h3>
+                        <div class="step-guide">
+                            <div class="step">
+                                <span class="step-number">1</span>
+                                <div class="step-content">
+                                    <h4>Enter Your Value</h4>
+                                    <p>Type the pressure value you want to convert in the input field. You can enter whole numbers or decimals (e.g., 2.5, 10.75, 45).</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <span class="step-number">2</span>
+                                <div class="step-content">
+                                    <h4>View Instant Results</h4>
+                                    <p>The conversion happens automatically as you type. No need to click any calculate button - results appear in real-time.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <span class="step-number">3</span>
+                                <div class="step-content">
+                                    <h4>Switch Units</h4>
+                                    <p>Click the swap button to change from Bar→PSI to PSI→Bar conversion. The interface updates automatically to show the new conversion direction.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <span class="step-number">4</span>
+                                <div class="step-content">
+                                    <h4>Copy Results</h4>
+                                    <p>Click on the result field to copy the converted value to your clipboard for use in other applications.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3>Keyboard Shortcuts</h3>
+                        <div class="shortcuts">
+                            <div class="shortcut-item">
+                                <kbd>Ctrl/Cmd + S</kbd>
+                                <span>Swap conversion direction</span>
+                            </div>
+                            <div class="shortcut-item">
+                                <kbd>Esc</kbd>
+                                <span>Clear all fields</span>
+                            </div>
+                            <div class="shortcut-item">
+                                <kbd>Enter</kbd>
+                                <span>Confirm input</span>
+                            </div>
+                        </div>
+
+                        <h3>Applications</h3>
+                        <p>This converter is essential for professionals in:</p>
+                        <ul>
+                            <li><strong>Automotive Industry:</strong> Converting tire pressure specifications between metric and imperial units</li>
+                            <li><strong>Hydraulic Systems:</strong> Designing pumps, cylinders, and pressure relief valves</li>
+                            <li><strong>HVAC Engineering:</strong> Calculating system pressures and equipment specifications</li>
+                            <li><strong>Industrial Equipment:</strong> Converting pressure ratings for international equipment</li>
+                            <li><strong>Oil & Gas:</strong> Working with pressure specifications across different measurement systems</li>
+                            <li><strong>Manufacturing:</strong> Quality control and process optimization</li>
+                        </ul>
+                    </article>
+
+                    <article class="content-card conversion-table-card">
+                        <h2>Common Pressure Conversions</h2>
+                        <p>This comprehensive table shows real-world pressure values and their applications across various industries. Use these reference values for quick conversions and understanding typical pressure ranges.</p>
+
+                        <div class="conversion-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Bar</th>
+                                        <th>PSI</th>
+                                        <th>Application</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1.0</td>
+                                        <td>14.504</td>
+                                        <td>Atmospheric pressure</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2.0</td>
+                                        <td>29.008</td>
+                                        <td>Bicycle tire pressure</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2.5</td>
+                                        <td>36.259</td>
+                                        <td>Car tire pressure</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3.5</td>
+                                        <td>50.763</td>
+                                        <td>Truck tire pressure</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6.9</td>
+                                        <td>100.076</td>
+                                        <td>Hydraulic systems</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10.0</td>
+                                        <td>145.038</td>
+                                        <td>Industrial compressors</td>
+                                    </tr>
+                                    <tr>
+                                        <td>15.0</td>
+                                        <td>217.557</td>
+                                        <td>Steam boilers</td>
+                                    </tr>
+                                    <tr>
+                                        <td>25.0</td>
+                                        <td>362.594</td>
+                                        <td>High-pressure pumps</td>
+                                    </tr>
+                                    <tr>
+                                        <td>45.0</td>
+                                        <td>652.670</td>
+                                        <td>Heavy machinery systems</td>
+                                    </tr>
+                                    <tr>
+                                        <td>70.0</td>
+                                        <td>1015.264</td>
+                                        <td>Industrial hydraulics</td>
+                                    </tr>
+                                    <tr>
+                                        <td>100.0</td>
+                                        <td>1450.377</td>
+                                        <td>High-pressure cleaning</td>
+                                    </tr>
+                                    <tr>
+                                        <td>200.0</td>
+                                        <td>2900.754</td>
+                                        <td>Ultra-high pressure applications</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="pressure-ranges">
+                            <h3>Pressure Range Categories</h3>
+                            <div class="range-grid">
+                                <div class="range-item low-pressure">
+                                    <h4>Low Pressure</h4>
+                                    <p><strong>0.1 - 5 bar</strong><br>(1.5 - 72.5 PSI)</p>
+                                    <span>Pneumatic systems, HVAC</span>
+                                </div>
+                                <div class="range-item medium-pressure">
+                                    <h4>Medium Pressure</h4>
+                                    <p><strong>5 - 50 bar</strong><br>(72.5 - 725 PSI)</p>
+                                    <span>Hydraulic machinery, pumps</span>
+                                </div>
+                                <div class="range-item high-pressure">
+                                    <h4>High Pressure</h4>
+                                    <p><strong>50+ bar</strong><br>(725+ PSI)</p>
+                                    <span>Industrial equipment, testing</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Bar2PSI Converter. Free online pressure conversion tool for engineers and professionals.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
