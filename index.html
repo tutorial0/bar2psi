@@ -48,8 +48,11 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="alternate icon" href="favicon.ico">
 
-    <link rel="stylesheet" href="style.css?v=1.1">
+    <link rel="stylesheet" href="style.css?v=1.2">
     <link rel="canonical" href="https://bartopsi.xyz">
+
+    <!-- Cache optimization -->
+    <meta http-equiv="Cache-Control" content="max-age=31536000, public">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-T69E3XS5ZT"></script>
@@ -92,7 +95,8 @@
                         <div class="input-group">
                             <label for="input-value" id="input-label">Input Pressure Value</label>
                             <input type="number" id="input-value" placeholder="Enter value" step="any">
-                            <select id="input-unit" class="unit-select">
+                            <label for="input-unit" class="sr-only">Input Unit</label>
+                            <select id="input-unit" class="unit-select" aria-label="Select input pressure unit">
                                 <option value="bar">bar</option>
                                 <option value="psi">psi (pounds per square inch)</option>
                                 <option value="pa">Pa (pascals)</option>
@@ -112,8 +116,8 @@
                         </div>
 
                         <div class="swap-container">
-                            <button id="swap-btn" class="swap-btn" title="Switch conversion direction">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <button id="swap-btn" class="swap-btn" title="Switch conversion direction" aria-label="Switch input and output units">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <path d="M7 16V4m0 0L3 8m4-4l4 4m6 8v-8m0 8l-4-4m4 4l4-4"/>
                                 </svg>
                             </button>
@@ -123,14 +127,15 @@
                             <label for="output-value" id="output-label">Conversion Result</label>
                             <div class="output-container">
                                 <input type="number" id="output-value" placeholder="Result" readonly>
-                                <button class="copy-btn" id="copyResult" title="Copy result">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <button class="copy-btn" id="copyResult" title="Copy result" aria-label="Copy conversion result to clipboard">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                         <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                                         <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                                     </svg>
                                 </button>
                             </div>
-                            <select id="output-unit" class="unit-select">
+                            <label for="output-unit" class="sr-only">Output Unit</label>
+                            <select id="output-unit" class="unit-select" aria-label="Select output pressure unit">
                                 <option value="psi">psi (pounds per square inch)</option>
                                 <option value="bar">bar</option>
                                 <option value="pa">Pa (pascals)</option>
@@ -181,8 +186,8 @@
                     <article class="content-card full-width collapsible">
                         <div class="collapsible-header">
                             <h2>About Bar and PSI Units</h2>
-                            <button class="collapse-btn" aria-expanded="false">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <button class="collapse-btn" aria-expanded="false" aria-label="Toggle About Bar and PSI Units section">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <polyline points="6,9 12,15 18,9"></polyline>
                                 </svg>
                             </button>
@@ -229,8 +234,8 @@
                     <article class="content-card full-width collapsible">
                         <div class="collapsible-header">
                             <h2>Bar to PSI Conversion by Industry Applications</h2>
-                            <button class="collapse-btn" aria-expanded="false">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <button class="collapse-btn" aria-expanded="false" aria-label="Toggle Bar to PSI Conversion by Industry Applications section">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <polyline points="6,9 12,15 18,9"></polyline>
                                 </svg>
                             </button>
@@ -293,8 +298,8 @@
                     <article class="content-card full-width collapsible">
                         <div class="collapsible-header">
                             <h2>How to Use This Bar to PSI Converter</h2>
-                            <button class="collapse-btn" aria-expanded="false">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <button class="collapse-btn" aria-expanded="false" aria-label="Toggle How to Use This Bar to PSI Converter section">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <polyline points="6,9 12,15 18,9"></polyline>
                                 </svg>
                             </button>
@@ -343,8 +348,8 @@
                     <article class="content-card full-width collapsible">
                         <div class="collapsible-header">
                             <h2>Pressure Safety Guide: Critical Bar to PSI Conversion Safety</h2>
-                            <button class="collapse-btn" aria-expanded="false">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <button class="collapse-btn" aria-expanded="false" aria-label="Toggle Pressure Safety Guide section">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <polyline points="6,9 12,15 18,9"></polyline>
                                 </svg>
                             </button>
@@ -431,8 +436,8 @@
                     <article class="content-card full-width collapsible">
                         <div class="collapsible-header">
                             <h2>Additional Pressure Units (Optional)</h2>
-                            <button class="collapse-btn" aria-expanded="false">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <button class="collapse-btn" aria-expanded="false" aria-label="Toggle Additional Pressure Units section">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <polyline points="6,9 12,15 18,9"></polyline>
                                 </svg>
                             </button>
@@ -474,8 +479,8 @@
                     <article class="content-card full-width collapsible">
                         <div class="collapsible-header">
                             <h2>Bar to PSI Conversion Tips & Accuracy Guide</h2>
-                            <button class="collapse-btn" aria-expanded="false">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <button class="collapse-btn" aria-expanded="false" aria-label="Toggle Bar to PSI Conversion Tips section">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <polyline points="6,9 12,15 18,9"></polyline>
                                 </svg>
                             </button>
@@ -623,8 +628,8 @@
                     <article class="content-card full-width collapsible">
                         <div class="collapsible-header">
                             <h2>Complete Unit Reference (Technical)</h2>
-                            <button class="collapse-btn" aria-expanded="false">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <button class="collapse-btn" aria-expanded="false" aria-label="Toggle Complete Unit Reference section">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <polyline points="6,9 12,15 18,9"></polyline>
                                 </svg>
                             </button>
@@ -927,6 +932,19 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=1.2"></script>
+
+    <!-- Register Service Worker for caching -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+                .then((registration) => {
+                    console.log('Service Worker registered successfully:', registration.scope);
+                })
+                .catch((error) => {
+                    console.log('Service Worker registration failed:', error);
+                });
+        }
+    </script>
 </body>
 </html>

@@ -146,13 +146,21 @@ function addEventListeners() {
   });
 
   // Prevent wheel events on number inputs
-  inputValue.addEventListener("wheel", function (e) {
-    e.preventDefault();
-  });
+  inputValue.addEventListener(
+    "wheel",
+    function (e) {
+      e.preventDefault();
+    },
+    { passive: false }
+  );
 
-  outputValue.addEventListener("wheel", function (e) {
-    e.preventDefault();
-  });
+  outputValue.addEventListener(
+    "wheel",
+    function (e) {
+      e.preventDefault();
+    },
+    { passive: false }
+  );
 
   // Copy button functionality
   const copyBtn = document.getElementById("copyResult");
@@ -531,7 +539,7 @@ function setupAnalyticsTracking() {
 
   // Use debounced scroll check
   const debouncedScrollCheck = debounce(checkScrollToBottom, 250);
-  window.addEventListener("scroll", debouncedScrollCheck);
+  window.addEventListener("scroll", debouncedScrollCheck, { passive: true });
 
   // Page time tracking
   let startTime = Date.now();
