@@ -176,7 +176,7 @@ main {
 .input-group label {
   display: block;
   font-weight: 600;
-  color: #555;
+  color: #333;
   font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -461,7 +461,7 @@ main {
 
 .collapsible-content p {
   margin-bottom: 0.8rem;
-  color: #555;
+  color: #333;
   font-size: 0.9rem;
 }
 
@@ -504,7 +504,7 @@ main {
 }
 
 .calculation-example em {
-  color: #6c757d;
+  color: #5a6268;
   font-style: italic;
 }
 
@@ -547,7 +547,7 @@ main {
 .step-content p {
   margin: 0;
   font-size: 0.8rem;
-  color: #6c757d;
+  color: #5a6268;
 }
 
 /* Other units guide */
@@ -573,7 +573,7 @@ main {
 .guide-step p {
   margin: 0;
   font-size: 0.8rem;
-  color: #6c757d;
+  color: #5a6268;
 }
 
 /* Units reference */
@@ -626,7 +626,7 @@ main {
 }
 
 .unit-ref em {
-  color: #6c757d;
+  color: #5a6268;
   font-style: italic;
   font-size: 0.85rem;
   display: block;
@@ -832,7 +832,7 @@ tbody tr:nth-child(even):hover {
 
 .pressure-ranges > p {
   text-align: center;
-  color: #666;
+  color: #444;
   margin-bottom: 2rem;
   font-size: 1rem;
   line-height: 1.6;
@@ -943,7 +943,7 @@ tbody tr:nth-child(even):hover {
 }
 
 .low-pressure h4 {
-  color: #28a745;
+  color: #1e7e34;
 }
 
 .medium-pressure {
@@ -951,7 +951,7 @@ tbody tr:nth-child(even):hover {
 }
 
 .medium-pressure h4 {
-  color: #e0a800;
+  color: #b8860b;
 }
 
 .high-pressure {
@@ -959,7 +959,7 @@ tbody tr:nth-child(even):hover {
 }
 
 .high-pressure h4 {
-  color: #dc3545;
+  color: #c82333;
 }
 
 /* Footer */
