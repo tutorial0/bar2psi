@@ -922,7 +922,7 @@ tbody tr:nth-child(even):hover {
 }
 
 .quick-reference-note h4 {
-  color: #667eea;
+  color: #4854d4;
   margin: 0 0 0.8rem 0;
   font-size: 1.1rem;
   font-weight: 600;
@@ -931,7 +931,7 @@ tbody tr:nth-child(even):hover {
 
 .quick-reference-note p {
   margin: 0.5rem 0;
-  color: #495057;
+  color: #2c3e50;
   font-size: 0.95rem;
   line-height: 1.6;
   text-align: center;
@@ -951,7 +951,7 @@ tbody tr:nth-child(even):hover {
 }
 
 .medium-pressure h4 {
-  color: #b8860b;
+  color: #996f00;
 }
 
 .high-pressure {
